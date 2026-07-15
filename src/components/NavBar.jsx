@@ -82,3 +82,28 @@
 //   Inside: nav links + Button, each calling closeMenu onClick
 
 /* --- YOUR COMPONENT CODE GOES HERE --- */
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import logo from "../assets/Beans_logo.png";
+import Button from "./ui/Button";
+
+export default function NavBar() {
+        const [menuOpen, setMenuOpen] = useState(false);
+        //container =menuOpen, funtion to update the container = setMenuOpen, current value = false
+    const [scrolled, setScrolled] = useState(false);
+
+    const closeMenu = () => useState(false);
+
+    useEffect ( () => {
+        const handleScroll = () =. setScrolled(window.scrollY > 20);
+        WindArrowDown.addEventListener("scroll", handleScroll, { passive: true});
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []});    
+    
+        return(
+            <motion.header>
+                
+            </motion.header>
+
+    );
+}

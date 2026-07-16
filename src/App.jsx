@@ -13,7 +13,7 @@
 //
 // ============================================================
 
-import { section } from "framer-motion/client"
+import { section } from "framer-motion/client";
 
 // STEP 1: Import your section components
 // Each component lives in its own file inside ./components/
@@ -31,7 +31,6 @@ import { section } from "framer-motion/client"
 // - ContactSection
 
 /* --- YOUR IMPORTS GO HERE --- */
-
 
 // STEP 2: Create and export the App component
 // Use: export default function App() { ... }
@@ -56,48 +55,36 @@ import { section } from "framer-motion/client"
 // for the navigation links in the NavBar.
 /* --- YOUR COMPONENT CODE GOES HERE --- */
 // imports go below here
+import NavBar from "./components/NavBar";
+
 export default function app() {
-    return(
-        <div className="app">
-            {/*NAVBAR*/}
+  return (
+    <div className="app">
+      {/*NAVBAR*/}
+        <NavBar />
 
-            {/*Hero*/}
-            <section className="hero bg-hero">
-                <div className="hero-grid">
+      {/*Hero*/}
+      <section className="hero bg-hero">
+        <div className="hero-grid"></div>
+      </section>
 
-                </div>
-            </section>
+      {/* FEATURES / CAROUSEL */}
+      <section className="features bg-features" id="shop"></section>
 
-            {/* FEATURES / CAROUSEL */}
-            <section className="features bg-features" id="shop">
+      {/* PRODUCT SHOWCASE */}
+      <section className="bg-cta"></section>
 
-            </section>
+      {/* CTA */}
+      <section className="bg-cta"></section>
 
-            {/* PRODUCT SHOWCASE */}
-            <section className="bg-cta">
+      {/* ABOUT */}
+      <section className="bg-cta" id="about"></section>
 
-            </section>
+      {/* CONTACT */}
+      <section className="bg-cta" id="contact"></section>
 
-            {/* CTA */}
-            <section className="bg-cta">
-
-            </section>
-
-            {/* ABOUT */}
-            <section className="bg-cta" id="about">
-
-            </section>
-
-            {/* CONTACT */}
-            <section className="bg-cta" id="contact">
-
-            </section>
-
-            {/* FOOTER */}
-            <section className="bg-footer">
-
-            </section>
-
-        </div>
-    );
+      {/* FOOTER */}
+      <section className="bg-footer"></section>
+    </div>
+  );
 }

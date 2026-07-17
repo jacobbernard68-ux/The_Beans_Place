@@ -33,7 +33,7 @@ import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import heroBeans from "../assets/hero-beans.png";
 import Button from "./ui/Button";
-import { Badge } from "./ui/Badge";
+import Badge from "./ui/Badge";
 
 // STEP 2: Animation Variants (outside the component)
 // Create two objects that define how text animates:

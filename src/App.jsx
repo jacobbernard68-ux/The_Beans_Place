@@ -66,10 +66,10 @@ export default function app() {
 
       {/*Hero*/}
       <section className="hero bg-hero">
-        <div className="hero-grid"></div>
+        <div className="hero-grid">
           <HeroSection />
+        </div>
       </section>
-
       {/* FEATURES / CAROUSEL */}
       <section className="features bg-features" id="shop"></section>
 

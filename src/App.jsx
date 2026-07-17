@@ -56,6 +56,7 @@ import { section } from "framer-motion/client";
 /* --- YOUR COMPONENT CODE GOES HERE --- */
 // imports go below here
 import NavBar from "./components/NavBar";
+import HeroSection from "./components/HeroSection";
 
 export default function app() {
   return (
@@ -66,6 +67,7 @@ export default function app() {
       {/*Hero*/}
       <section className="hero bg-hero">
         <div className="hero-grid"></div>
+          <HeroSection />
       </section>
 
       {/* FEATURES / CAROUSEL */}

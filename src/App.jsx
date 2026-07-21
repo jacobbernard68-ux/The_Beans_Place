@@ -58,6 +58,8 @@ import { section } from "framer-motion/client";
 import NavBar from "./components/NavBar";
 import HeroSection from "./components/HeroSection";
 import RibbonTicker from "./components/RibbonTicker";
+import FeaturesSection from "./components/FeaturesSection";
+import ProductShowcase from "./components/ProductShowcase";
 
 export default function app() {
   return (
@@ -68,6 +70,7 @@ export default function app() {
       {/*Hero*/}
       <section className="hero bg-hero">
         <div className="hero-grid">
+
           <HeroSection />
         </div>
       </section>
@@ -75,10 +78,15 @@ export default function app() {
       <RibbonTicker />
       
       {/* FEATURES / CAROUSEL */}
-      <section className="features bg-features" id="shop"></section>
+      <section className="features bg-features" id="shop">
+        <FeaturesSection />
+      </section>
+      
 
       {/* PRODUCT SHOWCASE */}
-      <section className="bg-cta"></section>
+      <section className="bg-cta">
+        <ProductShowcase />
+      </section>
 
       {/* CTA */}
       <section className="bg-cta"></section>

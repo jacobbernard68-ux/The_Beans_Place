@@ -159,56 +159,61 @@ const row3 = [
     imgBrazilianSantos
 ];
 
-function ImageRow( {images, offset = 0} ) {
-    // we are going to double the images so the row is wide enough to never show gaps
-    const doubled = [...images, ...images ];
+function ImageRow({ images, offset = 0 }) {
+    // Double the images so the row is wide enough to never show gaps
+    const doubled = [...images, ...images];
 
-    return(
-        <div className="carousel-row" style={ { transform: `translate3d (${offset}px, 0, 0)
-        `}}>
-            {doubled.map( (src, index) => (
+    return (
+        <div className="carousel-row" style={{ transform: `translate3d(${offset}px, 0, 0)` }}>
+            {doubled.map((src, index) => (
                 <div className="carousel-card" key={`${index}`}>
                     <img
                         src={src}
-                        alt={`Coffee Bag ${( index % images.length ) + 1 }`}
+                        alt={`Coffee bag ${(index % images.length) + 1}`}
                         className="carousel-image"
                         loading="lazy"
                     />
                 </div>
-            )) }
-        </div> 
+            ))}
+        </div>
     );
 }
 
 export default function FeaturesSection() {
     const sectionRef = useRef(null);
-    const [offsets, setOffsets] = useState([0, 0, 0])
+    const [offsets, setOffsets] = useState([0, 0, 0]);
 
-    useEffect( () => {
+    useEffect(() => {
         const handleScroll = () => {
             if (!sectionRef.current) return;
             const rect = sectionRef.current.getBoundingClientRect();
             const viewH = window.innerHeight;
+            // Progress: 0 when section enters bottom, 1 when it leaves top
+            const progress = 1 - rect.bottom / (viewH + rect.height);
+            const p = Math.max(0, Math.min(1, progress));
 
-            //Progress: 0 when section enters bottom, 1 when it leaves the top
-            const progress = 1 - rect.bottom / (viewH = rect.height);
-            const p = Math.max(0, Math.min( 1, progress ) );
-
-            //Each row moves at different speeds/directions based on scroll progress
-            // Scale randge to viewport width so it works on all screen sizes
-            const range = Math.min( window.innerHeight * 0.5, 600 );
-                setOffsets( [
-                    -p * range, //row 1: slides left
-                    p * range - range, // row 2: slides right (starts offset left)
-                    -p * range * 0.7 // row 3: slides left slower
-                ])
+            // Each row moves at different speeds/directions based on scroll progress
+            // Scale range to viewport width so it works on all screen sizes
+            const range = Math.min(window.innerWidth * 0.5, 600);
+            setOffsets([
+                -p * range, // row 1: slides left
+                p * range - range, // row 2: slides right (starts offset left)
+                -p * range * 0.7 // row 3: slides left slower
+            ]);
         };
+
         handleScroll();
-        window.addEventListener("scroll", handleScroll, { passive: true } );
+        window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [] );
+    }, []);
 
-    return(
-
+    return (
+        <section className="carousel-gallery-section" ref={sectionRef}>
+            <div className="carousel-gallery-container">
+                <ImageRow images={row1} offset={offsets[0]} />
+                <ImageRow images={row2} offset={offsets[1]} />
+                <ImageRow images={row3} offset={offsets[2]} />
+            </div>
+        </section>
     );
 }

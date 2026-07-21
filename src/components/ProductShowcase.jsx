@@ -38,7 +38,7 @@ import Button from "./ui/Button";
 import Separator from "./ui/Separator";
 
 import imgEthiopianHarrar from "../assets/Ethiopian-Harrar-Bag.png";
-import imgColumbianSupremo from "../assets/Columbian-Supremo-Bag.png";
+import imgColombianSupremo from "../assets/Colombian-Supremo-Bag.png";
 import imgKenyaAA from "../assets/Kenya-AA-Bag.png";
 import imgPanamaGeisha from "../assets/Panama-Geisha.png";
 import imgKona from "../assets/Kona-Bag.png";
@@ -125,12 +125,12 @@ const products = [
         badge: "Best Seller",
     },
     {
-        name: "Columbia Supremo",
-        origin: "Columbia",
+        name: "Colombian Supremo",
+        origin: "Colombia",
         price: "$16.99",
         roast: "Medium-Dark",
         notes: "Caramel, Nutty, Smooth Finish",
-        image: imgColumbianSupremo,
+        image: imgColombianSupremo,
         badge: null,
     },
     {
@@ -181,7 +181,7 @@ export default function ProductShowcase() {
             </ScrollReveal>
 
             <ScrollReveal animation="fadeUp" delay={0.1}>
-                <h2 className="prduct-showcase-title">
+                <h2 className="product-showcase-title">
                     Shop Our
                     <br />
                     <span className="muted"> Finest Beans</span>
@@ -199,8 +199,8 @@ export default function ProductShowcase() {
             </ScrollReveal>
 
             <StaggerContainer staggerDelay={0.1} className="product-grid">
-                {products.map((prduct) => (
-                    <StaggerItem key={products.name} animation="fadeUp">
+                {products.map((product) => (
+                    <StaggerItem key={product.name} animation="fadeUp">
                         <motion.div
                             className="product-card"
                             whileHover={ {y: -8, transition: { duration: 0.25 }}}
@@ -208,7 +208,7 @@ export default function ProductShowcase() {
                             <div className="product-card-image">
                                 <img
                                     src={product.image}
-                                    alt={prduct.name}
+                                    alt={product.name}
                                     loading="lazy"
                                 />
                                 {product.badge && (
@@ -230,7 +230,7 @@ export default function ProductShowcase() {
                                 </p>
                                 
                                 <p className="product-notes">
-                                    {prduct.notes}
+                                    {product.notes}
                                 </p>
 
                                 <Button variant="primary" size="sm" className="w-full mt-3">

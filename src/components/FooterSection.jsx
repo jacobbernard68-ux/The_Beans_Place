@@ -154,7 +154,7 @@ function LocationMap() {
   const mapInstance = useRef(null);
 
   useEffect(() => {
-    if (mapInstance.current || !map.current) return;
+    if (mapInstance.current || !mapRef.current) return;
     // if the map already exists or the div isn't ready - stop! This prevents building the map twice!
 
     const lat = 39.7386;
@@ -271,6 +271,17 @@ export default function FooterSection() {
             <h4 className="footer-col">Shop</h4>
             <ul role="list" className="footer-links mt-4">
               {navigation.shop.map((item) => (
+                <li key={item.name}>
+                  <a href={item.href}>{item.name}</a>
+                </li>
+              ))}
+            </ul>
+          </ScrollReveal>
+
+          <ScrollReveal animation="fadeup" delay={0.2}>
+            <h4 className="footer-col">Company</h4>
+            <ul role="list" className="footer-links mt-4">
+              {navigation.company.map((item) => (
                 <li key={item.name}>
                   <a href={item.href}>{item.name}</a>
                 </li>

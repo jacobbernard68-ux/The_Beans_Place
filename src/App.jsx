@@ -74,7 +74,6 @@ export default function app() {
       {/*Hero*/}
       <section className="hero bg-hero">
         <div className="hero-grid">
-
           <HeroSection />
         </div>
       </section>

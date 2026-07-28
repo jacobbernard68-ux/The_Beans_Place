@@ -410,7 +410,7 @@ function ContactFormInline() {
           variant="accent"
           size="lg"
           className="contact-form-submit"
-          disable={status === "sending"}
+          disabled={status === "sending"}
         >
           {status === "sending" ? (
             <span className="flex items-center gap-2">

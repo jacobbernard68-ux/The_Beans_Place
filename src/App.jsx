@@ -64,12 +64,13 @@ import CtaSection from "./components/CtaSection";
 import AboutSection from "./components/AboutSection";
 import ContactSection from "./components/ContactSection";
 import FooterSection from "./components/FooterSection";
+import RhinoCoffeeSection from "./components/RhinoCoffeeSection";
 
-export default function app() {
+export default function App() {
   return (
     <div className="app">
       {/*NAVBAR*/}
-        <NavBar />
+      <NavBar />
 
       {/*Hero*/}
       <section className="hero bg-hero">
@@ -79,12 +80,11 @@ export default function app() {
       </section>
 
       <RibbonTicker />
-      
+
       {/* FEATURES / CAROUSEL */}
       <section className="features bg-features" id="shop">
         <FeaturesSection />
       </section>
-      
 
       {/* PRODUCT SHOWCASE */}
       <section className="bg-cta">
@@ -94,6 +94,11 @@ export default function app() {
       {/* CTA */}
       <section className="bg-cta">
         <CtaSection />
+      </section>
+
+      {/* RHINO COFFEE FEATURE */}
+      <section className="bg-cta">
+        <RhinoCoffeeSection />
       </section>
 
       {/* ABOUT */}

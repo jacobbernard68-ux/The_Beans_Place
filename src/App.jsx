@@ -63,6 +63,7 @@ import ProductShowcase from "./components/ProductShowcase";
 import CtaSection from "./components/CtaSection";
 import AboutSection from "./components/AboutSection";
 import ContactSection from "./components/ContactSection";
+import FooterSection from "./components/FooterSection";
 
 export default function app() {
   return (
@@ -107,7 +108,9 @@ export default function app() {
       </section>
 
       {/* FOOTER */}
-      <section className="bg-footer"></section>
+      <section className="bg-footer">
+        <FooterSection />
+      </section>
     </div>
   );
 }
